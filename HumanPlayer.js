@@ -3,7 +3,7 @@ const Player = require('./Player')
 
 module.exports = class HumanPlayer extends Player {
 
-  getSelectedColumn(validColumns){
+  selectColumn(validColumns){
     return this._game.getHumanSelectedColumn(validColumns);
   }
 
