@@ -41,7 +41,7 @@ module.exports = class Game {
       // console.log('turn #%s',this._turnCount)
       let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
       currentPlayer.move();
-      this._view.showBoard(this._board);
+      this._view.showBoard(this._board.getBoard());
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
       this._turnCount++;
     }

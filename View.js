@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')();
+const util = require('util');
 
 module.exports = class View {
   constructor(game){
@@ -26,8 +27,10 @@ module.exports = class View {
   }
 
   showBoard(board){
+    console.log(util.inspect(board))
+    console.log(board.length)
     for(var r=0; r<board.length; r++){
-      console.log(board[r].join(''))
+      console.log(board[r].join('|'))
     }
   }
 

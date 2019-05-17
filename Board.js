@@ -1,3 +1,5 @@
+const EMPTY = '_';
+
 module.exports = class Board {
   constructor(rows,columns){
     this._rows = rows;
@@ -8,7 +10,7 @@ module.exports = class Board {
     for(var r=0;r<rows;r++){
       let cols = [];
       for(var c=0;c<columns;c++){
-        cols[c] = 'E';
+        cols[c] = EMPTY;
       }
       this._board[r] = cols;
     }
@@ -28,7 +30,7 @@ module.exports = class Board {
   getValidColumnsForMove(){
     let validColumns = [];
     for(var c=0;c<this._columns;c++){
-      if(this._board[0][c] == 'E'){
+      if(this._board[0][c] == EMPTY){
         validColumns.push(c)
       }
     }
@@ -37,18 +39,10 @@ module.exports = class Board {
 
   dropDiskToColumn(player,column){
     for(var r=this._rows-1;r>=0;r--){
-      if(this._board[r][column] == 'E'){
+      if(this._board[r][column] == EMPTY){
         this._board[r][column] = player;
         break;
       }
-    }
-    console.log('last move by player %s, dropped disk to column %s',player,column)
-    this.display();
-  }
-
-  display(){
-    for(var r=0;r<this._rows;r++){
-      console.log(this._board[r].join(''))
     }
   }
 
