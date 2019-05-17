@@ -38,5 +38,6 @@ module.exports = class Game {
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
       this._turnCount++;
     }
+    console.log('And the winner is (drums...): %s',this._board.isWon(this._player1.getID()) ? 'player #1' : 'player #2')
   }
 }
