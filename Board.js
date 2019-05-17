@@ -20,6 +20,11 @@ module.exports = class Board {
     this._board = board;
   }
 
+  // this function is mainly for tests, no actual usage for end user.
+  getBoard(){
+    return this._board;
+  }
+
   getValidColumnsForMove(){
     let validColumns = [];
     for(var c=0;c<this._columns;c++){
