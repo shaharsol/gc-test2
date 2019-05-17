@@ -7,7 +7,17 @@ module.exports = class Game {
     this._player2 = player2;
   }
 
+
+  isWon(){
+    return false;
+  }
+
   start(){
-    console.log('starting')
+    this._lastTurn = 2;
+    while(!this.isWon()){
+      let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
+      currentPlayer.move();
+      this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
+    }
   }
 }
