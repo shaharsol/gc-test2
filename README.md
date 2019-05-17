@@ -7,7 +7,7 @@ npm install
 ### Running the tests
 
 ```
-npm run test
+npm test
 ```
 
 ### Running the game
