@@ -17,9 +17,9 @@ module.exports = class Board {
 
   getValidColumnsForMove(){
     let validColumns = [];
-    for(var r=0;r<this._rows;r++){
-      if(this._board[0][r] == 'E'){
-        validColumns.push(r)
+    for(var c=0;c<this._columns;c++){
+      if(this._board[0][c] == 'E'){
+        validColumns.push(c)
       }
     }
     return validColumns;
@@ -43,7 +43,10 @@ module.exports = class Board {
   }
 
   isWon(player){
+    return this.isWonHorizontal(player) || this.isWonVertical(player) || this.isWonDiagonal(player)
+  }
 
+  isWonHorizontal(player){
     let chars = [];
     for(var i=0;i<4;i++){
       chars.push(player);
@@ -56,6 +59,30 @@ module.exports = class Board {
         return true;
       }
     }
+    return false;
+  }
+
+  isWonVertical(player){
+    let chars = [];
+    for(var i=0;i<4;i++){
+      chars.push(player);
+    }
+    let compareString = chars.join('')
+
+    for(var c=0;c<this._columns;c++){
+      let rowString = '';
+      for(var r=0;r<this._rows;r++){
+        rowString += this._board[r][c];
+      }
+      if(rowString.indexOf(compareString) > -1){
+        return true;
+      }
+    }
+    return false;
+
+  }
+
+  isWonDiagonal(player){
     return false;
   }
 
