@@ -26,4 +26,4 @@ To create different sets of player combinations, say, human vs super computer, y
 
 ### Notes
 
-  * I use abstract functions in this implementation. Javascript doesn't support abstract functions and classes yet. There are some hacks and workarounds that are nowhere native, so I decided to leave it as it is, as the purpose is to demonstrate OO design, and using abstract functions IMHO is very elegant.
+  * I use abstract functions in this implementation. Javascript doesn't support abstract functions and classes yet. There are some hacks and workarounds that are nowhere native, so I decided to leave it as it is, as the purpose is to demonstrate OO design, using abstract functions IMHO is very elegant, and I didn't want to switch my goto language.
