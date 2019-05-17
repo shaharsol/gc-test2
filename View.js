@@ -33,10 +33,14 @@ module.exports = class View {
   }
 
   announceStep(playerID,column){
-    console.log('Player %s dropped a token to column',playerID,column)
+    console.log('Player %s dropped a token to column',playerID,column);
   }
 
   announceWinner(winner){
-    console.log('And the winner is (drums...): %s',winner)
+    console.log('And the winner is (drums...): %s',winner);
+  }
+
+  announceGameOver(){
+    console.log('Game Over. no winner...');
   }
 }

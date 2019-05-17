@@ -39,13 +39,18 @@ module.exports = class Game {
   }
 
   start(){
+    let isGameOver = false;
     this._lastTurn = 2; // i.e it will start with player #1
-    while(!this.isWon()){
+    while(!this.isWon() && !isGameOver){
       let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
-      currentPlayer.move();
+      isGameOver = !currentPlayer.move();
       this._view.showBoard(this._board.getBoard());
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
     }
-    this._view.announceWinner(this._board.isWon(this._player1.getID()) ? 'player #1' : 'player #2')
+    if(isGameOver){
+      this._view.announceGameOver();
+    }else{
+      this._view.announceWinner(this._board.isWon(this._player1.getID()) ? 'player #1' : 'player #2')
+    }
   }
 }

@@ -11,9 +11,14 @@ module.exports = class Player {
 
     move(){
       let validColumns = this._game.getBoard().getValidColumnsForMove();
-      let selectedColumn = this.selectColumn(validColumns);
-      this._game.getBoard().dropDiskToColumn(this._id,selectedColumn);
-      this._game.announceStep(this._id,selectedColumn);
+      if(validColumns == []){
+        return false;
+      }else{
+        let selectedColumn = this.selectColumn(validColumns);
+        this._game.getBoard().dropDiskToColumn(this._id,selectedColumn);
+        this._game.announceStep(this._id,selectedColumn);
+        return true;
+      }
     }
 
     // abstract function, must be implemented by decendants
