@@ -32,7 +32,7 @@ module.exports = class Game {
     this._lastTurn = 2; // i.e it will start with player #1
     this._turnCount = 0;
     while(!this.isWon()){
-      console.log('turn #%s',this._turnCount)
+      // console.log('turn #%s',this._turnCount)
       let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
       currentPlayer.move();
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
