@@ -1,8 +1,8 @@
 module.exports = class Player {
 
-    constructor(id,board){
+    constructor(id,game){
       this._id = id;
-      this._board = board;
+      this._game = game;
     }
 
     getID(){
