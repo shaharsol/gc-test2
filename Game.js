@@ -14,15 +14,17 @@ module.exports = class Game {
   }
 
   isWon(){
-    return false;
+    return this._turnCount > 6;
   }
 
   start(){
     this._lastTurn = 2;
+    this._turnCount = 0;
     while(!this.isWon()){
       let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
       currentPlayer.move();
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
+      this._turnCount++;
     }
   }
 }

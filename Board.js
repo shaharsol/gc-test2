@@ -32,6 +32,7 @@ module.exports = class Board {
         break;
       }
     }
+    console.log('last move by player %s, dropped disk to column %s',player,column)
     this.display();
   }
 

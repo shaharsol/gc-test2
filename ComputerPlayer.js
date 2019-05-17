@@ -6,9 +6,9 @@ module.exports = class ComputerPlayer extends Player {
     let validColumns = this._board.getValidColumnsForMove();
 
     // randomly choose a column
-    var selectedColumn = Math.floor(Math.random() * validColumns.length);
+    var selectedColumnIndex = Math.floor(Math.random() * validColumns.length);
 
-    this._board.dropDiskToColumn(this._id,validColumns[selectedColumn]);
+    this._board.dropDiskToColumn(this._id,validColumns[selectedColumnIndex]);
 
   }
 }
