@@ -14,7 +14,7 @@ module.exports = class Game {
   }
 
   isWon(){
-    return this._turnCount > 6;
+    return this._board.isWon(this._player1.getID()) || this._board.isWon(this._player2.getID())
   }
 
   start(){

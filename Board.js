@@ -42,4 +42,21 @@ module.exports = class Board {
     }
   }
 
+  isWon(player){
+
+    let chars = [];
+    for(var i=0;i<2;i++){
+      chars.push(player);
+    }
+    let compareString = chars.join('')
+
+    for(var r=0;r<this._rows;r++){
+      let columnString = this._board[r].join('')
+      if(columnString.indexOf(compareString) > -1){
+        return true;
+      }
+    }
+    return false;
+  }
+
 }

@@ -8,6 +8,10 @@ module.exports = class Player {
       this._board = board;
     }
 
+    getID(){
+      return this._id;
+    }
+
     move(){
 
     }
