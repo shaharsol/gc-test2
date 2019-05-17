@@ -34,16 +34,17 @@ module.exports = class Game {
     return this._view.getHumanSelectedColumn(validColumns)
   }
 
+  announceStep(playerID,column){
+    this._view.announceStep(playerID,column);
+  }
+
   start(){
     this._lastTurn = 2; // i.e it will start with player #1
-    this._turnCount = 0;
     while(!this.isWon()){
-      // console.log('turn #%s',this._turnCount)
       let currentPlayer = (this._lastTurn == 1 ? this._player2 : this._player1);
       currentPlayer.move();
       this._view.showBoard(this._board.getBoard());
       this._lastTurn = (this._lastTurn == 1 ? 2 : 1);
-      this._turnCount++;
     }
     this._view.announceWinner(this._board.isWon(this._player1.getID()) ? 'player #1' : 'player #2')
   }

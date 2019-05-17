@@ -27,11 +27,13 @@ module.exports = class View {
   }
 
   showBoard(board){
-    console.log(util.inspect(board))
-    console.log(board.length)
     for(var r=0; r<board.length; r++){
       console.log(board[r].join('|'))
     }
+  }
+
+  announceStep(playerID,column){
+    console.log('Player %s dropped a token to column',playerID,column)
   }
 
   announceWinner(winner){
