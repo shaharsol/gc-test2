@@ -1,10 +1,7 @@
 module.exports = class Player {
 
-    constructor(id){
+    constructor(id,board){
       this._id = id;
-    }
-
-    setBoard(board){
       this._board = board;
     }
 
@@ -12,6 +9,7 @@ module.exports = class Player {
       return this._id;
     }
 
+    // abstract method, must be implemented by decendant
     move(){
 
     }
