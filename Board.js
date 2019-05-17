@@ -18,7 +18,7 @@ module.exports = class Board {
   getValidColumnsForMove(){
     let validColumns = [];
     for(var r=0;r<this._rows;r++){
-      if(this._board[r][0] == 'E'){
+      if(this._board[0][r] == 'E'){
         validColumns.push(r)
       }
     }
@@ -45,7 +45,7 @@ module.exports = class Board {
   isWon(player){
 
     let chars = [];
-    for(var i=0;i<2;i++){
+    for(var i=0;i<4;i++){
       chars.push(player);
     }
     let compareString = chars.join('')
