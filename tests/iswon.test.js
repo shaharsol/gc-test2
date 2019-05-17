@@ -63,6 +63,34 @@ test('the board should not be won horizontaly by player #1',() => {
   expect(board.isWon(1)).toBe(false)
 })
 
+test('the board should be won diaginally by player #1',() => {
+  let board = new Board(6,7)
+  board.setBoard([
+    ['_','_','_','_','_','_'],
+    ['_','_','_','_','_','_'],
+    ['_','_','_','_','_','_'],
+    ['_','_','_',1,'_','_'],
+    ['_','_',1,'_','_','_'],
+    [2,1,2,'_','_','_','_'],
+    [1,1,1,'_','_','_','_'],
+  ])
+  expect(board.isWon(1)).toBe(false)
+})
+
+test('the board should not be won diaginally by player #1',() => {
+  let board = new Board(6,7)
+  board.setBoard([
+    ['_','_','_','_','_','_'],
+    ['_','_','_','_','_','_'],
+    ['_','_','_','_','_','_'],
+    ['_','_','_','_',1,'_'],
+    ['_','_',1,'_','_','_'],
+    [2,1,2,'_','_','_','_'],
+    [1,1,1,'_','_','_','_'],
+  ])
+  expect(board.isWon(1)).toBe(false)
+})
+
 test('the board should be won verticaly by player #1',() => {
   let board = new Board(6,7)
   board.setBoard([

@@ -87,6 +87,41 @@ module.exports = class Board {
   }
 
   isWonDiagonal(player){
+    let result = false;
+    for(var r=0;r<this._rows;r++){
+      for(var c=0;c<this._columns;c++){
+        if(r - 3 > -1 && c + 3 < this._columns) {
+            result = player == this._board[r - 0][c + 0] &&
+                     player == this._board[r - 1][c + 1] &&
+                     player == this._board[r - 2][c + 2] &&
+                     player == this._board[r - 3][c + 3];
+        }
+        // if the bottom right contains possible win
+        if(r + 3 < this._rows  && c + 3 < this._columns) {
+            result = player == this._board[r + 0][c + 0] &&
+                     player == this._board[r + 1][c + 1] &&
+                     player == this._board[r + 2][c + 2] &&
+                     player == this._board[r + 3][c + 3];
+        }
+        // if the bottom left contains possible win
+        if(r + 3 < this._rows && c - 3 > -1) {
+            result = player == this._board[r + 0][c - 0] &&
+                     player == this._board[r + 1][c - 1] &&
+                     player == this._board[r + 2][c - 2] &&
+                     player == this._board[r + 3][c - 3];
+        }
+        // if the top left contains a possible win
+        if(r - 3 > -1 && c - 3 > -1) {
+            result = player == this._board[r - 0][c - 0] &&
+                     player == this._board[r - 1][c - 1] &&
+                     player == this._board[r - 2][c - 2] &&
+                     player == this._board[r - 3][c - 3];
+        }
+        if(result){
+          return true;
+        }
+      }
+    }
     return false;
   }
 
