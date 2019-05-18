@@ -27,3 +27,4 @@ To create different sets of player combinations, say, human vs super computer, y
 ### Notes
 
   * I use abstract functions in this implementation. Javascript doesn't support abstract functions and classes yet. There are some hacks and workarounds that are nowhere native, so I decided to leave it as it is, as the purpose is to demonstrate OO design, using abstract functions IMHO is very elegant, and I didn't want to switch my goto language.
+  * Efficiency is not top notch. There are full board scans for each direction whereas I could implement a more local scan in response to a new disk location, but since efficiency wasn't a factor for this exercise, I decided to leave it as it is. 
